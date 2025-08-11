@@ -15,9 +15,28 @@ logging.Formatter.converter = lambda *args: datetime.now(pytz.timezone("Asia/Tok
 
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # 从环境变量读取 webhook
 
+def escape_markdown(text):
+    """转义 Markdown 特殊符号，防止被解释"""
+    special_chars = r"\`*_{}[]()#+-.!"
+    for ch in special_chars:
+        text = text.replace(ch, f"\\{ch}")
+    return text
+
 def load_birthdays(file_path='birthdays.json'):
     with open(file_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        data = json.load(f)
+
+    # 对 JSON 数据里的每个字段做转义，防止 Markdown 渲染
+    escaped_data = []
+    for entry in data:
+        escaped_entry = []
+        for i, item in enumerate(entry):
+            if i < len(entry) - 1:
+                escaped_entry.append(escape_markdown(str(item)))  # 除最后一项外都转义
+            else:
+                escaped_entry.append(item)  # 最后一项保持原样
+        escaped_data.append(escaped_entry)
+    return escaped_data
 
 def get_today_in_tokyo():
     tz_tokyo = pytz.timezone('Asia/Tokyo')
