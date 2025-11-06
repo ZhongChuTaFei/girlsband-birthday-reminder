@@ -17,7 +17,7 @@ WEBHOOK_URL = os.getenv("WEBHOOK_URL")  # 从环境变量读取 webhook
 
 def escape_markdown(text):
     """转义 Markdown 特殊符号，防止被解释"""
-    special_chars = r"\`*_{}[]()#+-.!"
+    special_chars = r"\`*#"
     for ch in special_chars:
         text = text.replace(ch, f"\\{ch}")
     return text
@@ -57,7 +57,12 @@ def build_message(entry, readable_date, current_time):
         return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，**{role}**的生日，祝她生日快乐🎉！", role
     elif len(entry) == 5:
         name, role, band, position, date = entry
-        return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{role}的声优**{name}**的生日，祝她生日快乐🎉！", name
+        if role.endswith("ex"):
+            clean_role = role[:-2]  # 去掉末尾的 "ex"
+            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{clean_role}的前声优**{name}**的生日，祝她生日快乐🎉！", name
+        else:
+            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{role}的声优**{name}**的生日，祝她生日快乐🎉！", name
+
     return None, None
 
 def send_message(msg):
