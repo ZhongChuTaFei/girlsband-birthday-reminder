@@ -61,14 +61,14 @@ def build_message(entry, readable_date, current_time):
 
     if len(entry) == 4:
         role, band, position, _ = entry
-        return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，**{role}**的生日，祝她生日快乐🎉！", role
+        return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，**{role}**的生日，祝他生日快乐🎉！", role
     elif len(entry) == 5:
         name, role, band, position, _ = entry
         if role.endswith("ex"):
             clean_role = role[:-2]  # 去掉末尾的 "ex"
-            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{clean_role}的前声优**{name}**的生日，祝她生日快乐🎉！", name
+            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{clean_role}的前声优**{name}**的生日，祝他生日快乐🎉！", name
         else:
-            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{role}的声优**{name}**的生日，祝她生日快乐🎉！", name
+            return f"现在是日本时间{readable_date}{current_time}，{readable_date}是{band}的{position}，{role}的声优**{name}**的生日，祝他生日快乐🎉！", name
 
     return None, None
 

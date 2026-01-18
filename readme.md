@@ -10,8 +10,9 @@
 * **企业微信机器人兼容**：默认支持企业微信机器人消息格式。
 * **Webhook 安全管理**：Webhook URL 通过 GitHub Secrets 配置，确保安全。
 * **内置生日数据**：
-    * 包含 **BanG Dream! 全部十个乐队**的角色生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica、梦限大MewType。
+    * 包含 **BanG Dream! 全部十个乐队的角色**生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica、梦限大MewType。
     * 包含 **BanG Dream! 九个乐队的现任角色声优**生日（不含梦限大MewType）。
+    * 包含 **Girls Band Cry 两个乐队的现任角色、声优**生日：TOGENASHI TOGEARI、Diamond Dust。
 
 ---
 
@@ -33,12 +34,28 @@
 ---
 ## ▶️ 运行示例
 
-### 邦多利生日提醒
-现在是日本时间7月14日0点整，7月14日是Poppin'Party的主唱、吉他手，**户山香澄**的生日，祝她生日快乐🎉！
+### $\color{#ea9f00}{🎂邦多利生日提醒}$
+>现在是日本时间7月14日0点整，7月14日是Poppin'Party的主唱、吉他手，**户山香澄**的生日，祝他生日快乐🎉！
+
+### $\color{#ea9f00}{🎂邦多利生日提醒}$
+>
+现在是日本时间12月25日0点整，12月25日是Poppin'Party的主唱、吉他手，户山香澄的声优**爱美**的生日，祝他生日快乐🎉！
 
 ---
 ## ⚙️ 自定义与维护
 
 * **修改生日数据**：编辑 `birthdays.json` 文件以添加、修改或删除生日信息。文件格式如下：
-    * **角色生日**：`["角色名", "乐队名", "职位", "MM-DD"]`
-    * **声优生日**：`["声优姓名", "角色名", "乐队名", "职位", "MM-DD"]`
+    * **角色生日**：`["角色姓名", "乐队名", "职位", "MM-DD"]`
+    * **声优生日**：`["声优姓名", "角色姓名", "乐队名", "职位", "MM-DD"]`
+* **自定义其他人物生日数据**：
+   1. 编辑 `main.py` 文件中 `PROJECT_MAP` 部分
+      ```python
+      PROJECT_MAP = {
+       "GBC": "嘎嘣脆", # 除最后一行外 每行末尾需加","
+       "birthday.json中的代号": "推送时显示的名称"
+      }
+      ```
+   2. 编辑 `birthdays.json` 文件以添加、修改或删除生日信息。文件格式如下：
+      * **角色生日**：`["角色姓名", "乐队名", "职位", "MM-DD", "代号"]`
+      * **声优生日**：`["声优姓名", "角色姓名", "乐队名", "职位", "代号"]`
+    * 注意：当数据包含声优姓名且角色姓名以 `ex` 结尾时，该后缀将被删除且推送文案中的 `声优`会被改为 `前声优`。
