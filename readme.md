@@ -6,13 +6,14 @@
 
 ## ✨ 功能速览
 
-* **GitHub Actions 自动运行**：~~每日日本时间0点自动运行，无需额外服务器。~~ 因推送延迟原因默认不启用 如需启用请查看[部署步骤](https://github.com/ZhongChuTaFei/girlsband-birthday?tab=readme-ov-file#%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4)中第3步
+* ~~**GitHub Actions 自动运行**：每日日本时间0点自动运行，无需额外服务器。~~ Github Actions因推送延迟原因默认不启用 如需启用请查看[部署步骤](https://github.com/ZhongChuTaFei/girlsband-birthday?tab=readme-ov-file#%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4)中第3步
 * **企业微信机器人兼容**：默认支持企业微信机器人消息格式。
 * **Webhook 安全管理**：Webhook URL 通过 GitHub Secrets 配置，确保安全。
 * **内置生日数据**：
-    * 包含 **BanG Dream! 中十个乐队的角色**生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica、梦限大MewType。
-    * 包含 **BanG Dream! 中九个乐队的角色声优**生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica。
-    * 包含 **Girls Band Cry 中两个乐队的角色、角色声优**生日：TOGENASHI TOGEARI、Diamond Dust。
+    * 包含 **BanG Dream! 中十二个乐队的角色**生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica、梦限大MewType、Millsage、一家Dumb Rock!。
+    * 包含 **BanG Dream! 中十一个乐队的角色声优**生日：Poppin'Party、Afterglow、Pastel*Palettes、Roselia、Hello, Happy World!、Morfonica、RAISE A SUILEN、MyGO!!!!!、Ave Mujica、Millsage、一家Dumb Rock!。
+    * 包含 **Girls Band Cry 中一个乐队的角色**生日：TOGENASHI TOGEARI。
+    * 包含 **Girls Band Cry 中两个乐队的角色声优**生日：TOGENASHI TOGEARI、Diamond Dust。
 
 ---
 
@@ -35,10 +36,10 @@
 ## ▶️ 运行示例
 
 ### $\color{#ea9f00}{🎂邦多利生日提醒}$
->现在是日本时间7月14日0点整，7月14日是Poppin'Party的主唱、吉他手，**户山香澄**的生日，祝他生日快乐🎉！
+>现在是日本时间7月14日0点整，7月14日是Poppin'Party的主唱、吉他手，**户山香澄**的生日，祝她生日快乐🎉！
 
 ### $\color{#ea9f00}{🎂邦多利生日提醒}$
->现在是日本时间12月25日0点整，12月25日是Poppin'Party的主唱、吉他手，户山香澄的声优**爱美**的生日，祝他生日快乐🎉！
+>现在是日本时间12月25日0点整，12月25日是Poppin'Party的主唱、吉他手，户山香澄的声优**爱美**的生日，祝她生日快乐🎉！
 
 ---
 ## ⚙️ 自定义与维护
